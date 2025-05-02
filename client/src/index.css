@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 240 10% 3.9%;
+  --muted: 60 4.8% 95.9%;
+  --muted-foreground: 25 5.3% 44.7%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 10% 3.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 3.9%;
+  --border: 20 5.9% 90%;
+  --input: 20 5.9% 90%;
+  --primary: 213 28% 14%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 37 33% 42%;
+  --secondary-foreground: 0 0% 98%;
+  --accent: 39 59% 67%;
+  --accent-foreground: 240 5.9% 10%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 240 5% 64.9%;
+  --radius: 0.5rem;
+  --chart-1: 213 28% 14%;
+  --chart-2: 37 33% 42%;
+  --chart-3: 39 59% 67%;
+  --chart-4: 220 14% 96%;
+  --chart-5: 0 0% 86%;
+}
+
+.dark {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --primary: 213 28% 14%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 37 33% 42%;
+  --secondary-foreground: 0 0% 98%;
+  --accent: 39 59% 67%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 240 4.9% 83.9%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-light text-dark font-sans antialiased;
+    scroll-behavior: smooth;
+  }
+
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .font-sans {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .font-serif {
+    font-family: 'Cormorant Garamond', serif;
+  }
+}
+
+@layer utilities {
+  .bg-light {
+    background-color: #F8F5F2;
+  }
+
+  .bg-dark {
+    background-color: #1A1A1A;
+  }
+
+  .bg-primary {
+    background-color: #132C33;
+  }
+
+  .bg-secondary {
+    background-color: #8A6642;
+  }
+
+  .bg-accent {
+    background-color: #D4B483;
+  }
+
+  .text-light {
+    color: #F8F5F2;
+  }
+
+  .text-dark {
+    color: #1A1A1A;
+  }
+
+  .text-primary {
+    color: #132C33;
+  }
+
+  .text-secondary {
+    color: #8A6642;
+  }
+
+  .text-accent {
+    color: #D4B483;
+  }
+
+  .border-light {
+    border-color: #F8F5F2;
+  }
+  
+  .border-dark {
+    border-color: #1A1A1A;
+  }
+  
+  .border-primary {
+    border-color: #132C33;
+  }
+  
+  .border-secondary {
+    border-color: #8A6642;
+  }
+  
+  .border-accent {
+    border-color: #D4B483;
+  }
+
+  .hero-text {
+    letter-spacing: -0.02em;
+  }
+
+  .nav-item {
+    position: relative;
+  }
+  
+  .nav-item::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #D4B483;
+    transition: width 0.3s ease;
+  }
+  
+  .nav-item:hover::after {
+    width: 100%;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
