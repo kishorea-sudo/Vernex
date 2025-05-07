@@ -36,7 +36,7 @@ app.use((req, res, next) => {
   next();
 });
 
-
+  
 async function registerRoutes(app: express.Application) {
   // add api routes here
   app.all("/api/hello", async (req, res, next) => {
@@ -56,4 +56,6 @@ registerRoutes(app);
 
     res.status(status).json({ message });
   });
+
+  
 export default app;
