@@ -1,5 +1,4 @@
 import express, { type Request, Response, NextFunction } from "express";
-import { log } from "./vite";
 import * as hello from "./hello";
 
 
@@ -30,7 +29,7 @@ app.use((req, res, next) => {
         logLine = logLine.slice(0, 79) + "…";
       }
 
-      log(logLine);
+      // log(logLine);
     }
   });
 
