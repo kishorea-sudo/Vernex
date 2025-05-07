@@ -1,6 +1,7 @@
 import express, { type Request, Response, NextFunction } from "express";
-import { registerRoutes } from "./routes";
-import { serveStatic, log } from "./vite";
+import { log } from "./vite";
+import * as hello from "./hello";
+
 
 const app = express();
 app.use(express.json());
@@ -36,17 +37,24 @@ app.use((req, res, next) => {
   next();
 });
 
-(async () => {
-  await registerRoutes(app);
+
+async function registerRoutes(app: express.Application) {
+  // add api routes here
+  app.all("/api/hello", async (req, res, next) => {
+    try {
+      await hello.default(req, res);
+    } catch (err) {
+      next(err);
+    }
+  });
+}
+
+registerRoutes(app);
 
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
     const status = err.status || err.statusCode || 500;
     const message = err.message || "Internal Server Error";
 
     res.status(status).json({ message });
-    throw err;
   });
-  serveStatic(app);
-})();
-
 export default app;

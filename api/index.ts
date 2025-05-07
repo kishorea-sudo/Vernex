@@ -1,6 +1,9 @@
-import { app } from "./app";
-import { VercelRequest, VercelResponse } from "@vercel/node";
+import { app } from "./app"
+import { Request, Response } from 'express'
+import { getHandler } from "@hono/node-server"
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
-  await app(req, res);
-}
+const handler = getHandler(app)
+
+export default async function vercelHandler(req: Request, res: Response) {
+  await handler(req, res)
+};
