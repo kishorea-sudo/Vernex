@@ -1,5 +1,5 @@
 import express, { type Request, Response, NextFunction } from "express";
-import * as hello from "./hello";
+import hello from "./hello";
 
 
 const app = express();
@@ -36,11 +36,11 @@ app.use((req, res, next) => {
   next();
 });
 
-  
-async function registerRoutes(app: express.Application) {
-  // add api routes here
-  app.all("/api/hello", async (req, res, next) => {
+
+function registerRoutes(app: express.Application) {
+  app.all("/api/hello", async (req, res) => {
     try {
+      
       await hello.default(req, res);
     } catch (err) {
       next(err);
@@ -48,14 +48,13 @@ async function registerRoutes(app: express.Application) {
   });
 }
 
-registerRoutes(app);
+registerRoutes(app); 
 
-  app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
-    const status = err.status || err.statusCode || 500;
-    const message = err.message || "Internal Server Error";
+app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
+  const status = err.status || err.statusCode || 500;
+  const message = err.message || "Internal Server Error";
 
-    res.status(status).json({ message });
-  });
+  res.status(status).json({ message });
+});
 
-  
-export default app;
+export { app };
