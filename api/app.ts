@@ -1,4 +1,4 @@
-import express, { type Request, Response, NextFunction } from "express";
+import express, { type Request, Response, NextFunction, Router } from "express";
 import handler from "./hello";
 
 const app: express.Application = express();
@@ -12,6 +12,14 @@ app.all("/api/hello", async (req, res) => {
         const status = error.status || error.statusCode || 500;
         const message = error.message || "Internal Server Error";
         res.status(status).json({ message });
+    }
+  });
+  
+app.all("/api/world", async (req, res) => {
+    try {
+      res.status(200).send("Hello World");
+    } catch (error) {
+        res.status(500).json({ message: "Internal Server Error" });
     }
   });
 
