@@ -21,4 +21,4 @@ app.use((err: any, req: Request, res: Response, next: NextFunction) => {
     res.status(status).json({ message });
 });
 
-export { app };
+export default app;
