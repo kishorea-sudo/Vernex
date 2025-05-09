@@ -1,8 +1,7 @@
 import express, { type Express } from "express";
-import { log } from "./vite";
 
 export const registerRoutes = async (app: Express) => {
-  log(`registering routes`);
+
   const server = express.Router();
 
   app.use("/api", server);
