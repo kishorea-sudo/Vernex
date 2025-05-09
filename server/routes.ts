@@ -1,9 +1,13 @@
-import express, { type Express } from "express";
+import { Express } from "express";
+import express from "express";
 
-export const registerRoutes = async (app: Express) => {
+export const registerRoutes = (app: Express) => {
+  const router = express.Router();
 
-  const server = express.Router();
+  // Sample route
+  router.get("/ping", (_, res) => {
+    res.json({ pong: true });
+  });
 
-  app.use("/api", server);
-  return app.listen({ port: 0, host: "0.0.0.0", reusePort: true });
+  app.use("/api", router);
 };
