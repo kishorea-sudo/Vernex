@@ -24,8 +24,8 @@ export default defineConfig({
   },
   root: path.resolve(import.meta.dirname, "client"),
   build: {
-    // 🔥 This is the key fix — Vercel expects `dist`, not `dist/public`
     outDir: path.resolve(import.meta.dirname, "dist"),
     emptyOutDir: true,
   },
+  
 });
