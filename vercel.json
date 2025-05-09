@@ -1,0 +1,15 @@
+{
+    "projects": {
+      "client": {
+        "src": "client",
+        "use": "@vercel/static-build",
+        "config": {
+          "distDir": "../dist"
+        }
+      }
+    },
+    "buildCommand": "npm run build",
+    "outputDirectory": "dist",
+    "rootDirectory": "client"
+  }
+  
