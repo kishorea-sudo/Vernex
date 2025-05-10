@@ -21,7 +21,7 @@ const Feature: React.FC<{ icon: React.ReactNode; title: string; desc: string }> 
 
 const WhyChooseUs: React.FC = () => {
   return (
-    <section className="py-20 bg-primary text-light">
+    <section className="bg-primary text-light">
       <motion.div
         variants={staggerContainer}
         initial="hidden"

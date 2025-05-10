@@ -20,7 +20,7 @@ const ServiceCard: React.FC<typeof services[0]> = ({
         <motion.div 
           className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
           style={{ 
-            backgroundSize: "200% 100%",
+            backgroundSize: "200% 100%", 
             zIndex: 1 
           }}
           variants={shimmer}
@@ -80,7 +80,7 @@ const ServiceCard: React.FC<typeof services[0]> = ({
 
 const Services: React.FC = () => {
   return (
-    <section id="services" className="py-20 md:py-28 bg-light">
+    <section id="services" className="bg-light">
       <motion.div
         variants={staggerContainer}
         initial="hidden"

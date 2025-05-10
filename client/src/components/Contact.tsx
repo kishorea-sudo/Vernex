@@ -40,7 +40,7 @@ type FormValues = z.infer<typeof formSchema>;
 
 const Contact: React.FC = () => {
   const { toast } = useToast();
-  
+
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -77,13 +77,13 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-20 md:py-28 bg-light">
+    <section id="contact" className="bg-light">
       <motion.div
         variants={staggerContainer}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.25 }}
-        className="container mx-auto px-4 md:px-8"
+        className="container mx-auto px-6 md:px-8 py-16 md:py-24"
       >
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <motion.div variants={staggerContainer}>
@@ -179,13 +179,13 @@ const Contact: React.FC = () => {
           </motion.div>
 
           <motion.div variants={fadeIn}>
-            <div className="bg-white p-8 rounded-lg shadow-md">
+            <div className="bg-white p-6 md:p-8 rounded-lg shadow-md">
               <h3 className="font-display text-2xl font-bold text-primary mb-6">
                 Send a Message
               </h3>
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <FormField
                       control={form.control}
                       name="name"
@@ -262,11 +262,7 @@ const Contact: React.FC = () => {
                       <FormItem>
                         <FormLabel>Your Message</FormLabel>
                         <FormControl>
-                          <Textarea
-                            placeholder="Tell us about your project..."
-                            rows={4}
-                            {...field}
-                          />
+                          <Textarea placeholder="Tell us about your project" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -275,7 +271,7 @@ const Contact: React.FC = () => {
 
                   <Button
                     type="submit"
-                    className="w-full bg-primary text-light hover:bg-secondary transition-all duration-300"
+                    className="w-full bg-primary text-light hover:bg-secondary transition-colors"
                     disabled={isPending}
                   >
                     {isPending ? "Sending..." : "Send Message"}

@@ -30,7 +30,7 @@ const StatBlock: React.FC<{ value: string; label: string }> = ({ value, label })
 
 const About: React.FC = () => {
   return (
-    <section id="about" className="py-20 md:py-28 bg-white">
+    <section id="about" className="bg-white">
       <motion.div
         variants={staggerContainer}
         initial="hidden"
@@ -45,7 +45,7 @@ const About: React.FC = () => {
             </motion.span>
             <motion.h2
               variants={fadeInUp}
-              className="font-display text-4xl md:text-5xl font-bold text-primary mt-2 mb-6"
+              className="font-display text-4xl md:text-5xl font-bold text-primary mb-6"
             >
               Crafting Digital Excellence
             </motion.h2>
@@ -86,10 +86,7 @@ const About: React.FC = () => {
         </div>
 
         {/* Values Section */}
-        <motion.div
-          variants={staggerContainer}
-          className="mt-24"
-        >
+        <motion.div variants={staggerContainer}>
           <motion.div
             variants={fadeInUp}
             className="text-center max-w-3xl mx-auto mb-16"

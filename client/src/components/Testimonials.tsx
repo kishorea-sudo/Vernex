@@ -22,13 +22,13 @@ const Testimonials: React.FC = () => {
   const currentTestimonial = testimonials[activeIndex];
 
   return (
-    <section className="py-20 bg-primary">
+    <section className="bg-primary">
       <motion.div
         variants={staggerContainer}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.25 }}
-        className="container mx-auto px-4 md:px-8"
+        className="container mx-auto px-4 md:px-8 py-20"
       >
         <motion.div
           variants={fadeInUp}

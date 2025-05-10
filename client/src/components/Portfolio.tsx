@@ -77,7 +77,7 @@ const Portfolio: React.FC = () => {
     : portfolioItems.filter(item => item.category === activeFilter);
 
   return (
-    <section id="portfolio" className="py-20 md:py-28 bg-light">
+    <section id="portfolio" className="bg-light">
       <motion.div
         variants={staggerContainer}
         initial="hidden"
